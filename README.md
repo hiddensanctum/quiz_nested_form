@@ -10,7 +10,7 @@ A basic framework for a quiz creation app done with nested attributes in Rails 4
 
 ##Rails 4 Differences
 ###Strong parameter nesting
-In the parent controller you must pass in all of the attributes of all of the
+In the parent controller you must pass in all of the attributes that the test controller will need to create your test, questions, and answers.
 ```shell
 # in parent controller.rb
 params.require(:parent).permit(:parent_variables, child_attributes: [:child_variables])
