@@ -10,9 +10,18 @@ A basic framework for a quiz creation app done with nested attributes in Rails 4
 
 ##Rails 4 Differences
 ###Strong parameter nesting
+In the parent controller you must pass in all of the attributes of all of the
 ```shell
-params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, '_destroy', answers_attributes: [:id, :question_id, :content, :correct, '_destroy' ] ])
+# in parent controller.rb
+params.require(:parent).permit(:parent_variables, child_attributes: [:child_variables])
 end
+```
+###turbo link workaround
+In order for the javascript to load, you will need to include this in your javascript file.
+```shell
+# in javascript
+ $(document).ready(ready)
+ $(document).on('page:load', ready)
 ```
 
 [1]: https://github.com/brookr
